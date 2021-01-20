@@ -49,3 +49,21 @@ int main(void)
     q.pop();
   }
 }
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+bool visited[9];
+vector<int> graph[9];
+
+void  dfs(int x){
+  visited[x] = true;
+  count << x << ' ';
+  for (int i = 0; i < graph.size(); i++)
+  {
+    int y = graph[x][i]
+    if (!visited[y]) dfs(y);
+  }
+}
