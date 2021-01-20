@@ -224,4 +224,3 @@ if value != 0:
   alpha.append(str(value))
 
 print(''.join(alpha))#문자열로 출력하기 위함
->>>>>>> 650f2189f87442400fd7e1e9886dc66ff889e6d6
