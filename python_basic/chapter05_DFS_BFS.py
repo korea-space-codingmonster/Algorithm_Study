@@ -756,3 +756,25 @@
 
 # 출처
 
+from collections import deque
+
+def bfs():
+  q = deque()
+  q.append(n) #q = deque([5])
+  while q:
+    x = q.popleft()# 처음 시작점은 x = 5, q = deque([])
+    if x == k:
+      print(dist[x])
+      break
+    for nx in (x-1, x+1, x*2): # nx = 4, 6, 10
+      if 0 <= nx <= MAX and not dist[nx]:
+          dist[nx] = dist[x] + 1
+          q.append(nx)# q = deque([4, 6, "10"])
+#dist[4] = dist[5] + 1 = 0 + 1 = 1
+#dist[6] = dist[5] + 1 = 0 + 1 = 1
+#dist[10] = dist[5] + 1 = 0 + 1 = 1
+MAX = 10 ** 5
+dist = [0] * (MAX + 1)
+n, k = map(int, input().split())
+
+bfs()
