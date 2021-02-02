@@ -428,9 +428,6 @@
 # print(dist[n - 1][m - 1])
 
 
-
-
-
 #-----------------------------------------------------------------
 # 문제
 # <그림 1>과 같이 정사각형 모양의 지도가 있다. 1은 집이 있는 곳을, 0은 집이 없는 곳을 나타낸다. 철수는 이 지도를 가지고 연결된 집의 모임인 단지를 정의하고, 단지에 번호를 붙이려 한다. 여기서 연결되었다는 것은 어떤 집이 좌우, 혹은 아래위로 다른 집이 있는 경우를 말한다. 대각선상에 집이 있는 경우는 연결된 것이 아니다. <그림 2>는 <그림 1>을 단지별로 번호를 붙인 것이다. 지도를 입력하여 단지수를 출력하고, 각 단지에 속하는 집의 수를 오름차순으로 정렬하여 출력하는 프로그램을 작성하시오.
@@ -459,6 +456,39 @@
 # 9
 
 #단지 수, 단지별 아파수 오름차순 출력
+
+# from collections import deque
+
+# dx = [-1, 1, 0 ,0]
+# dy = [0, 0, 1, -1]
+
+# n = int(input())
+# ap = [list(map(int, list(input()))) for _ in range(n)]
+# visited = [[0] * m for _ in range(n)]
+
+# def bfs(ap, visited, count, x, y):
+#   queue = deque()
+#   ap[x][y] = 0#지나간 자리는 0으로
+#   while queue():
+#     x, y = queue.pop()
+#     for i in range(4):
+#       nx, ny = x + dx[i], y + dy[i]
+#       if 0 <= nx < n and 0 <= ny < n:
+#         if ap[nx][ny] == 1:
+#           count += 1
+#           ap[nx][ny] == 0
+#           queue.append((nx, ny))
+
+
+
+# count = 1
+# count = []
+# for i in range(n):
+#   for j in range(n):
+#     if ap[i][j] == 1:
+#       count.append(bfs(ap, visited, count, x, y))
+
+
 # import sys
 
 # n = int(input())
@@ -546,51 +576,51 @@
 # 예제 출력 4  복사
 # 14
 
-from collections import deque
+# from collections import deque
 
-M, N = map(int, input().split())
-tots = [list(map(int, input().split())) for _ in range(N)]
-queue = deque() # 꼭 deque를 쓰지 않아도 됨
+# M, N = map(int, input().split())
+# tots = [list(map(int, input().split())) for _ in range(N)]
+# queue = deque() # 꼭 deque를 쓰지 않아도 됨
 
-for i in range(N):
-    for j in range(M):
-        if tots[i][j] == 1:
-            queue.append([i, j])
-            
-dx = [1, -1, 0, 0]
-dy = [0, 0, 1, -1]
+# for i in range(N):
+#     for j in range(M):
+#         if tots[i][j] == 1:
+#             queue.append([i, j])
 
-# 여기부터 bfs
-while queue:
-    row, col = queue.popleft()
+# dx = [1, -1, 0, 0]
+# dy = [0, 0, 1, -1]
+
+# # 여기부터 bfs
+# while queue:
+#     row, col = queue.popleft()
     
-    for k in range(4):
-        _row = row + dy[k]
-        _col = col + dx[k]
+#     for k in range(4):
+#         _row = row + dy[k]
+#         _col = col + dx[k]
         
-        # 안익은게 있다면, 익은 것으로 바꿔준다.
-        if 0 <= _row < N and 0 <= _col < M and tots[_row][_col] == 0:
-            tots[_row][_col] = tots[row][col] + 1
-            queue.append([_row, _col])
-# bfs 끝------
+#         # 안익은게 있다면, 익은 것으로 바꿔준다.
+#         if 0 <= _row < N and 0 <= _col < M and tots[_row][_col] == 0:
+#             tots[_row][_col] = tots[row][col] + 1
+#             queue.append([_row, _col])
+# # bfs 끝------
 
-# -1이 존재해서 -2 값으로 비교
-result = -2
-# 안익은게 있는지 체크
-check_tot = False#0
+# # -1이 존재해서 -2 값으로 비교
+# result = -2
+# # 안익은게 있는지 체크
+# check_tot = False#0
 
-for i in tots:
-    for j in i:
-        if(j == 0):
-            check_tot = True#1
-        result = max(result, j)#제일 큰 값을 반환
+# for i in tots:
+#     for j in i:
+#         if(j == 0):
+#             check_tot = True#1
+#         result = max(result, j)#제일 큰 값을 반환
         
-if check_tot:#아직도 0이면 
-    print(-1)#-1 출력
-elif result == -1:
-    print(0)
-else:
-    print(result - 1)
+# if check_tot:#아직도 0이면 
+#     print(-1)#-1 출력
+# elif result == -1:
+#     print(0)
+# else:
+#     print(result - 1)
 
 
 #---------------------------------------------------------------------------
@@ -598,8 +628,6 @@ else:
 # 신종 바이러스인 웜 바이러스는 네트워크를 통해 전파된다. 한 컴퓨터가 웜 바이러스에 걸리면 그 컴퓨터와 네트워크 상에서 연결되어 있는 모든 컴퓨터는 웜 바이러스에 걸리게 된다.
 
 # 예를 들어 7대의 컴퓨터가 <그림 1>과 같이 네트워크 상에서 연결되어 있다고 하자. 1번 컴퓨터가 웜 바이러스에 걸리면 웜 바이러스는 2번과 5번 컴퓨터를 거쳐 3번과 6번 컴퓨터까지 전파되어 2, 3, 5, 6 네 대의 컴퓨터는 웜 바이러스에 걸리게 된다. 하지만 4번과 7번 컴퓨터는 1번 컴퓨터와 네트워크상에서 연결되어 있지 않기 때문에 영향을 받지 않는다.
-
-
 
 # 어느 날 1번 컴퓨터가 웜 바이러스에 걸렸다. 컴퓨터의 수와 네트워크 상에서 서로 연결되어 있는 정보가 주어질 때, 1번 컴퓨터를 통해 웜 바이러스에 걸리게 되는 컴퓨터의 수를 출력하는 프로그램을 작성하시오.
 
@@ -619,28 +647,29 @@ else:
 # 5 6
 # 4 7
 # 예제 출력 1  복사
-# 4
 
-from sys import stdin
-read = stdin.readline
-dic = {}
+from collections import deque
 
-for i in range(int(read())):
-  dic[i + 1] = set()
-for j in range(int(read())):
-  a, b = map(int, read().split())
-  dic[a].add(b)
-  dic[b].add(a)
+computer = int(input())
+network = int(input())
+virus_map = [[0 for _ in range(computer + 1)] for _ in range(computer + 1)]
 
-def bfs(start, dic):
-  queue = [start]
+for _ in range(network):
+  x, y = map(int, input().split())
+  virus_map[x][y] = 1
+  virus_map[y][x] = 1
+
+def bfs(virus_map, start):
+  queue = deque([start])
+  visited = []
+
   while queue:
-    for i in dic[queue.pop()]:
-      if i not in visited:
-        visited.append(i)
+    temp = queue.popleft()
+    visited.append(temp)
+
+    for i in range(len(virus_map)):
+      if virus_map[temp][i] and i not in visited and i not in queue:
         queue.append(i)
+  return len(visited) - 1
 
-visited = []
-bfs(1, dic)
-print(len(visited) - 1)
-
+print(bfs(virus_map, 1))
