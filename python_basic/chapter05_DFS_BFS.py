@@ -840,40 +840,40 @@
 # 예제 출력 2  복사
 # 2
 
-from collections import deque
+# from collections import deque
 
-dx = [1, -1, 0, 0]
-dy = [0, 0, 1, -1]
-count = 0
+# dx = [1, -1, 0, 0]
+# dy = [0, 0, 1, -1]
+# count = 0
 
-def bfs(row, col, count):
-  queue = deque()
-  queue.append((row, col)
-  graph[row][col] = count
+# def bfs(row, col, count):
+#   queue = deque()
+#   queue.append((row, col)
+#   graph[row][col] = count
 
-  while queue:
-    x, y = queue.popleft()
-    for i in range(4):
-      nx = x + dx[i]
-      ny = y + dy[i]
-      if 0 <= nx < row and 0 <= ny < col:
-        #graph[nx][ny] = graph[x][y] + 1
-        queue.append((nx, ny))
-        graph[nx][ny] = count
+#   while queue:
+#     x, y = queue.popleft()
+#     for i in range(4):
+#       nx = x + dx[i]
+#       ny = y + dy[i]
+#       if 0 <= nx < row and 0 <= ny < col:
+#         #graph[nx][ny] = graph[x][y] + 1
+#         queue.append((nx, ny))
+#         graph[nx][ny] = count
 
-test_case = int(input())
-for i in range(test_case):
-#row = 행, col = 열, position = 배추 위치
-  row, col, position = map(int, input().split())
-  graph = [[0 for _ in range(col)] for _ in range(row)]#0으로 꽉찬 그래프
-  visited = [[-1] * col for _ in range(row)]
+# test_case = int(input())
+# for i in range(test_case):
+# #row = 행, col = 열, position = 배추 위치
+#   row, col, position = map(int, input().split())
+#   graph = [[0 for _ in range(col)] for _ in range(row)]#0으로 꽉찬 그래프
+#   visited = [[-1] * col for _ in range(row)]
 
-  for _ in range(position):
-    x, y = map(int, input().split())
-    graph[x][y] = 1
-  for i in range(row):
-    for j in range(col):
-      if graph[row][col] == 1 and visited[row][col] == -1:
-        count += 1
-        bfs(row, col, count)
+#   for _ in range(position):
+#     x, y = map(int, input().split())
+#     graph[x][y] = 1
+#   for i in range(row):
+#     for j in range(col):
+#       if graph[row][col] == 1 and visited[row][col] == -1:
+#         count += 1
+#         bfs(row, col, count)
 
