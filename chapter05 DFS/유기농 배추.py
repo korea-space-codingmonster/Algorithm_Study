@@ -49,38 +49,37 @@
 # 5
 # 1
 
-n = int(input())
-row, col, position = map(int, input().split())
+# import sys
+# sys.setrecursionlimit(10000)
 
-graph = []
-for i in range(row):
-  for j in range(col):
-      graph[i][j] = 0
+# def dfs(x, y):
+#   dx = [-1, 1, 0, 0]
+#   dy = [0, 0, -1, 1]
 
-for i in range(position):
-  x, y = map(int, input().split())
-  graph[x][y] == 1
+#   for i in range(4):
+#     nx = x + dx[i]
+#     ny = y + dy[i]
 
-def dfs(graph, count, x, y):
-  graph[x][y] = 0
+#     if (0 <= nx < N) and (0 <= ny < M):
+#       if matrix[nx][ny] == 1:
+#           matrix[nx][ny] = -1
+#           dfs(nx, ny)
 
-  dx = [-1, 1, 0, 0]
-  dy = [0, 0, -1, 1]
-  
-  for i in range(4):
-    x_n = x + dx[i]
-    y_n = y + dy[i]
 
-    if x_n >= 0 and x_n < n and y_n >= 0 and y_n < n:
+# #M = 행, N = 열, K = 벌레 위치 개수
+# T = int(input())
+# for _ in range(T):
+#   M, N, K = map(int, input().split())
+#   matrix = [[0] * M for _ in range(N)]
+#   cnt = 0
 
-      if graph[x_n][y_n] == 1:
-        count = dfs(graph, count + 1, x_n, y_n)
-  return count
+#   for _ in range(K):
+#     m, n = map(int, input().split())
+#     matrix[n][m] = 1
 
-count = 0
-for i in range(row):
-  for j in range(col):
-    if graph[row][col] == 1:
-      count = dfs(graph, count, i, j)
-
-print(count)
+#   for i in range(N):
+#     for j in range(M):
+#       if matrix[i][j] > 0:
+#         dfs(i, j)
+#         cnt += 1
+#   print(cnt)
