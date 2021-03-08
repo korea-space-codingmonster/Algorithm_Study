@@ -21,6 +21,7 @@ def quick_sort(array, start, end):
   quick_sort(array, right + 1, end)
 
 quick_sort(array, 0, len(array) - 1)
+<<<<<<< HEAD
 print(array)
 
 
@@ -43,3 +44,6 @@ def   quick_sort(array):
   return quick_sort(left_side) + [pivot] + quick_sort(right_side)
 
   print(quick_sort(array))
+=======
+print(array)
+>>>>>>> fb307ecffca441e9cc81c8c3f971d195c082fe29
