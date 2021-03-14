@@ -7,4 +7,6 @@
 3. 선택정렬 알고리즘[https://codingmonsters.tistory.com/29]
 4. 삽입정렬 알고리즘[https://codingmonsters.tistory.com/30]
 5. 퀵정렬 알고리즘[https://codingmonsters.tistory.com/34]
-6. 
+6. 계수정렬 알고리즘
+7. 병합정렬 알고리즘
+8. 순차탐색[]
