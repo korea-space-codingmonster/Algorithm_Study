@@ -36,4 +36,12 @@ else
 def   binary_search(array, target, start, end):
   while start <= end:
     mid = (start + end) // 2
-    
+    #찾는 경우 중간점 인덱스 반환
+    if target == array[mid]:
+      return mid;
+    elif array[mid] > target:
+      end = mid - 1
+    else:
+      start = mid + 1
+  return None
+
