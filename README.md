@@ -9,4 +9,7 @@
 5. 퀵정렬 알고리즘[https://codingmonsters.tistory.com/34]
 6. 계수정렬 알고리즘
 7. 병합정렬 알고리즘
+<<<<<<< HEAD
 8. 순차탐색[]
+=======
+>>>>>>> 195ffab3f137c4347babd1fe2add7c052eda5500
