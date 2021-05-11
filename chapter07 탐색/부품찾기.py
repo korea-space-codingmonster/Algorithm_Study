@@ -32,6 +32,11 @@
 #출력예시
 #no yes yes
 
+
+
+
+# ------------------------------------------------------------
+
 # <코딩테스트를 위한 내용>
  
 # Python에서 입력값을 받을 때 input() 함수를 사용하지만 시간단축을 위해 sys.stdin.readline을 사용한다.
@@ -68,23 +73,13 @@
  
 # * pypy : python 구동을 더 빠르게 시켜준다. (개선된 python)
 
-# import sys
-# N = int(sys.stdin.readline().rstrip())
-# a = [sys.stdin.readline().rstrip() for i in range(N)]
-
-# M = int(sys.stdin.readline())
-# b = [sys.stdin.readline().rstrip() for i in range(M)]
-
-# for i in b:
-#   if i in a:
-#     print('yes', end = ' ')
-#   else:
-#     print('no', end = ' ')
+# ------------------------------------------------------------
 
 
+# 이진탐색을 이용한 방법
 
-#이진탐색
-# def binary_search(array, target, start, end):
+# def  binary_search(array, target, start, end):
+   
 #   while start <= end:
 #     mid = (start + end) // 2
 
@@ -92,36 +87,44 @@
 #       return mid
 #     elif array[mid] > target:
 #       end = mid - 1
-#     elif array[mid] < target:
-#       start = array[mid] + 1
-#   return None  
+#     else:
+#       start = mid + 1
+#   return None
 
-# N = int(input())
+# n = int(input())
 # array = list(map(int, input().split()))
 # array.sort()
 
-# M = int(input())
+# m = int(input())
 # x = list(map(int, input().split()))
 
 # for i in x:
-#   result = binary_search(array, i, 0, N-1)
+#   result = binary_search(array, i, 0, n-1);
 #   if result != None:
 #     print('yes', end = ' ')
 #   else:
-#     print('No', end = ' ')
+#     print('no', end = ' ')
+ 
 
-#계수정렬
-n = int(input())
-array = [0] * 1000001
+# ------------------------------------------------------------
+#계수정렬을 이용
 
-for i in input().split():
-  array[int(i)] = 1
+# n = int(input())
+# array = [0] * 1000001
+# for i in input().split():
+#   array[int(i)] = 1
 
-m = int(input())
-x = list(map(int, input().split()))
+# m = int(input())
+# x = list(map(int, input().split()))
 
-for i in x:
-  if array[i] == 1:
-    print('yes', end = ' ')
-  else:
-    print('no', end = ' ')
+# for i in x:
+#   if array[i] == 1:
+#     print('yes', end = ' ')
+#   else:
+#     print('no', end = ' ')
+
+
+
+# ------------------------------------------------------------
+
+
