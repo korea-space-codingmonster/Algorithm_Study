@@ -44,3 +44,13 @@ def   binary_search(array, target, start, end):
     else:
       start = mid + 1
   return None
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 09fa1d58f60161fa0a2693b24d4fdf83168195e6
+>>>>>>> 75a42a96fd1bda1c0d6efe51475ed36ee1ead754
+>>>>>>> 381ad7213fb3f556bfa05cd6ba07e83ad9c505f9
